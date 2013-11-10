@@ -1,0 +1,15 @@
+Description: Support building on Debian GNU/kFreeBSD.
+Author: Cyril Brulebois <kibi@debian.org>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=558208
+Last-Update: 2013-10-07
+--- a/configure.ac
++++ b/configure.ac
+@@ -27,7 +27,7 @@ dnl Which platform are we building on?
+ PLATFORM=
+ SHLIBSUFFIX=
+ case "`uname -s`" in
+-	Linux)	PLATFORM=linux
++	Linux|GNU/kFreeBSD)	PLATFORM=linux
+ 		SHLIBSUFFIX="so"
+ 	;;
+ 	Darwin)	PLATFORM=darwin

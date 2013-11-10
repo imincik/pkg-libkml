@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+
+JAVA_HOME = /usr/lib/jvm/default-java
+
+DEB_CONFIGURE_EXTRA_FLAGS = --enable-systempython --with-java-include-dir=$(JAVA_HOME)/include
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+%:
+	dh $@ --with autoreconf,python2
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(DEB_CONFIGURE_EXTRA_FLAGS)
+
+override_dh_auto_install:
+	dh_auto_install
+
+	# Strip RPATH
+	chrpath --delete $(CURDIR)/debian/tmp/usr/lib/python*/*-packages/*.so
+
+	# Remove autotools stuff
+	find $(CURDIR)/examples/ -type f -name "Makefile*" -delete
+
+	# Remove python swig
+	find $(CURDIR)/debian/tmp/usr/lib -name "libkml*python*.so*" -delete
+
+	# Remove la files
+	find $(CURDIR)/debian/tmp/usr/lib -name "*.la" -delete
+
+	# Move libraries from libkml subdirectory
+	mv $(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libkml/* $(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/
+
+	# libminizip headers
+	install -m755 -d $(CURDIR)/debian/tmp/usr/include/minizip
+	install -m644 $(CURDIR)/third_party/zlib-*/contrib/minizip/*h $(CURDIR)/debian/tmp/usr/include/minizip/
+
+override_dh_install:
+	dh_install --autodest --list-missing
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Xpython-kml
+
+override_dh_python:
+	dh_python2 -ppython-kml
+

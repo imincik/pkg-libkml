@@ -1,0 +1,14 @@
+Description: Fix building with GCC 4.7
+Author: Matthias Klose <doko@debian.org>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=667247
+Last-Update: 2013-10-07
+--- a/src/kml/base/file_posix.cc
++++ b/src/kml/base/file_posix.cc
+@@ -29,6 +29,7 @@
+ #include "kml/base/file.h"
+ #include <stdlib.h>
+ #include <string.h>
++#include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 

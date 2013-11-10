@@ -1,0 +1,573 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libxml
+Upstream-Contact: Google Inc. <opensource@google.com>
+Source: https://code.google.com/p/libkml/
+License: BSD-3-Clause
+
+Files: *
+Copyright: 2008-2010, Google Inc.
+License: BSD-3-Clause
+
+Files: third_party/googletest-r108/*
+Copyright: 2005-2008, Google Inc
+License: BSD-3-Clause
+
+Files: config/ltmain.sh
+Copyright: 1996-2001, 2003-2008, Free Software Foundation, Inc
+License: GPL-2.0+ with Libtool exception
+
+Files: third_party/boost_1_34_1/boost/config/abi/borland_prefix.hpp
+ third_party/boost_1_34_1/boost/config/abi/borland_suffix.hpp
+ third_party/boost_1_34_1/boost/config/abi/msvc_prefix.hpp
+ third_party/boost_1_34_1/boost/config/abi/msvc_suffix.hpp
+ third_party/boost_1_34_1/boost/config/abi_prefix.hpp
+ third_party/boost_1_34_1/boost/config/abi_suffix.hpp
+ third_party/boost_1_34_1/boost/config/auto_link.hpp
+ third_party/boost_1_34_1/boost/config/requires_threads.hpp
+Copyright: 2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/no_tr1/complex.hpp
+ third_party/boost_1_34_1/boost/config/no_tr1/functional.hpp
+ third_party/boost_1_34_1/boost/config/no_tr1/memory.hpp
+ third_party/boost_1_34_1/boost/config/no_tr1/utility.hpp
+Copyright: 2005, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/greenhills.hpp
+ third_party/boost_1_34_1/boost/config/platform/beos.hpp
+ third_party/boost_1_34_1/boost/config/user.hpp
+Copyright: 2001, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/compaq_cxx.hpp
+ third_party/boost_1_34_1/boost/config/platform/cygwin.hpp
+ third_party/boost_1_34_1/boost/config/posix_features.hpp
+Copyright: 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/sgi_mipspro.hpp
+ third_party/boost_1_34_1/boost/config/platform/aix.hpp
+ third_party/boost_1_34_1/boost/config/stdlib/vacpp.hpp
+Copyright: 2001-2002, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/platform/irix.hpp
+ third_party/boost_1_34_1/boost/config/platform/solaris.hpp
+Copyright: 2003, Jens Maurer
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config.hpp
+ third_party/boost_1_34_1/boost/config/platform/amigaos.hpp
+Copyright: 2002, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/hp_acc.hpp
+Copyright: 2002, Aleksey Gurtovoy
+ 2006, Boris Gubenko
+ 2002-2003, David Abrahams
+ 2001-2003, Jens Maurer
+ 2001-2003, John Maddock
+ 2003, Toon Knapen
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/borland.hpp
+Copyright: 2002, Aleksey Gurtovoy
+ 2002-2003, David Abrahams
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/mpw.hpp
+Copyright: 2002, Aleksey Gurtovoy
+ 2001-2002, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/visualc.hpp
+Copyright: 2002, Aleksey Gurtovoy
+ 2002-2003, Beman Dawes
+ 2001-2002, Darin Adler
+ 2002-2003, David Abrahams
+ 2001-2003, John Maddock
+ 2001, Peter Dimov
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/common_edg.hpp
+Copyright: 2002, Aleksey Gurtovoy
+ 2002, David Abrahams
+ 2001, Jens Maurer
+ 2001-2002, John Maddock
+ 2005, Markus Schöpflin
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/kai.hpp
+Copyright: 2002, Aleksey Gurtovoy
+ 2002, David Abrahams
+ 2001, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/intel.hpp
+Copyright: 2002-2003, Aleksey Gurtovoy
+ 2003, Beman Dawes
+ 2002-2003, David Abrahams
+ 2002-2003, Guillaume Melquiond
+ 2001, Jens Maurer
+ 2001, John Maddock
+ 2003, Martin Wille
+ 2001, Peter Dimov
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/sunpro_cc.hpp
+Copyright: 2002-2003, Aleksey Gurtovoy
+ 2002, David Abrahams
+ 2001-2003, Jens Maurer
+ 2001, John Maddock
+ 2002, Peter Dimov
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/comeau.hpp
+Copyright: 2003, Aleksey Gurtovoy
+ 2003, Beman Dawes
+ 2001, Douglas Gregor
+ 2003, Jens Maurer
+ 2001, John Maddock
+ 2001, Peter Dimov
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/platform/win32.hpp
+Copyright: 2003, Aleksey Gurtovoy
+ 2001, Bill Kempf
+ 2001-2003, John Maddock
+ 2005, Rene Rivera
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/metrowerks.hpp
+Copyright: 2001-2003, Beman Dawes
+ 2001, Darin Adler
+ 2001-2002, David Abrahams
+ 2001, John Maddock
+ 2001, Peter Dimov
+ 2004, Stefan Slapeta
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/gcc.hpp
+Copyright: 2001-2003, Beman Dawes
+ 2001-2002, Darin Adler
+ 2002-2003, David Abrahams
+ 2002, Douglas Gregor
+ 2001-2002, Jens Maurer
+ 2001-2003, John Maddock
+ 2003, Synge Todo
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/libcomo.hpp
+Copyright: 2002-2003, Beman Dawes
+ 2002-2003, Jens Maurer
+ 2002-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/vacpp.hpp
+Copyright: 2002-2003, Beman Dawes
+ 2001-2003, John Maddock
+ 2001, Lie-Quan Lee
+ 2002-2003, Markus Schöpflin
+ 2001-2003, Toon Knapen
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/suffix.hpp
+Copyright: 2002, Bill Kempf
+ 2001, Darin Adler
+ 2002-2003, David Abrahams
+ 2003, Eric Friedman
+ 2003, Gennaro Prota
+ 2002, Jens Maurer
+ 2001-2003, John Maddock
+ 2001, Peter Dimov
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/platform/macos.hpp
+Copyright: 2002, Bill Kempf
+ 2001-2002, Darin Adler
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/platform/hpux.hpp
+Copyright: 2006, Boris Gubenko
+ 2002, David Abrahams
+ 2001-2003, Jens Maurer
+ 2001-2003, John Maddock
+ 2003, Toon Knapen
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/digitalmars.hpp
+Copyright: 2003, Christof Meerwald
+ 2003, Dan Watkins
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/checked_delete.hpp
+Copyright: 2002-2003, Peter Dimov
+ 2003, Daniel Frey
+ 2003, Howard Hinnant
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/platform/bsd.hpp
+Copyright: 2001, Darin Adler
+ 2002, Douglas Gregor
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/stlport.hpp
+Copyright: 2001, Darin Adler
+ 2001, Jens Maurer
+ 2001-2002, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/sgi.hpp
+Copyright: 2001, Darin Adler
+ 2001-2003, Jens Maurer
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/msl.hpp
+Copyright: 2001, Darin Adler
+ 2001, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/detail/workaround.hpp
+Copyright: 2002, David Abrahams
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/dinkumware.hpp
+Copyright: 2002, David Abrahams
+ 2003, Guillaume Melquiond
+ 2001, Jens Maurer
+ 2001-2003, John Maddock
+ 2001, Peter Dimov
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/roguewave.hpp
+Copyright: 2003, David Abrahams
+ 2001, Jens Maurer
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/scoped_ptr.hpp
+Copyright: 2001-2002, Peter Dimov
+ 1998-1999, Greg Colvin and Beman Dawes
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/select_compiler_config.hpp
+Copyright: 2003, Guillaume Melquiond
+ 2001-2003, John Maddock
+ 2003, Martin Wille
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/modena.hpp
+Copyright: 2001, Jens Maurer
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/select_platform_config.hpp
+Copyright: 2001, Jens Maurer
+ 2001-2002, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/stdlib/libstdcpp3.hpp
+Copyright: 2001, Jens Maurer
+ 2001, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/platform/linux.hpp
+Copyright: 2001-2003, Jens Maurer
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/select_stdlib_config.hpp
+Copyright: 2001-2002, Jens Maurer
+ 2001-2003, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/platform/qnxnto.hpp
+Copyright: 2005, Jim Douglas
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/config/compiler/gcc_xml.hpp
+Copyright: 2006, John Maddock
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/intrusive_ptr.hpp
+Copyright: 2001-2002, Peter Dimov
+License: BSL-1.0
+
+Files: third_party/boost_1_34_1/boost/assert.hpp
+Copyright: 2001-2002, Peter Dimov and Multi Media Ltd
+License: BSL-1.0
+
+Files: third_party/expat.win32/expat.h
+ third_party/expat.win32/expat_external.h
+Copyright: 1998-2000, Thai Open Source Software Center Ltd
+License: MIT
+
+Files: third_party/uriparser-0.7.5/*
+Copyright: 2007, Sebastian Pipping <webmaster@hartwork.org>
+ 2007, Weijia Song <songweijia@gmail.com>
+License: BSD-3-Clause
+
+Files: third_party/uriparser-0.7.5/build-aux/ltmain.sh
+Copyright: 1996-2001, 2003-2008, Free Software Foundation, Inc.
+License: GPL-2.0+ with Libtool exception
+
+Files: third_party/uriparser-0.7.5/test/FourSuite.cpp
+ third_party/uriparser-0.7.5/test/FourSuite.h
+ third_party/uriparser-0.7.5/test/test.cpp
+Copyright: 2007, Sebastian Pipping <webmaster@hartwork.org>
+ 2007, Weijia Song <songweijia@gmail.com>
+License: LGPL-2.1+
+
+Files: third_party/zlib-1.2.3/contrib/minizip/unzip.c
+Copyright: 1990-2000, Info-ZIP.
+ 1998-2005, Gilles Vollant
+Comment: Decryption code comes from crypt.c by Info-ZIP but has been greatly
+ reduced in terms of compatibility with older software. The following is from
+ the original crypt.c. Code woven in by Terry Thorsen 1/2003.
+ .
+ Copyright (c) 1990-2000 Info-ZIP.  All rights reserved.
+ .
+ See the accompanying file LICENSE, version 2000-Apr-09 or later
+ (the contents of which are also included in zip.h) for terms of use.
+ If, for some reason, all these files are missing, the Info-ZIP license
+ also may be found at:  ftp://ftp.info-zip.org/pub/infozip/license.html
+ .
+ crypt.c (full version) by Info-ZIP.      Last revised:  [see crypt.h]
+ .
+ The encryption/decryption parts of this source code (as opposed to the
+ non-echoing password parts) were originally written in Europe.  The
+ whole source package can be freely distributed, including from the USA.
+ (Prior to January 2000, re-export from the US was a violation of US law.)
+ .
+ This encryption code is a direct transcription of the algorithm from
+ Roger Schlafly, described by Phil Katz in the file appnote.txt.  This
+ file (appnote.txt) is distributed with the PKZIP program (even in the
+ version without encryption capabilities).
+License: zlib
+
+Files: third_party/zlib-1.2.3/contrib/minizip/iomem_simple.c
+Copyright: 1998-2003, Gilles Vollant
+ 2003, Justin Fletcher
+Comment: This file is from the proposed iomem_simple package found at
+ http://code.trak.dk/
+ .
+ ioapi_mem2.c -- IO base function header for compress/uncompress .zip
+ files using zlib + zip or unzip API
+ .
+ This version of ioapi is designed to access memory rather than files.
+ We do use a region of memory to put data in to and take it out of. We do
+ not have auto-extending buffers and do not inform anyone else that the
+ data has been written. It is really intended for accessing a zip archive
+ embedded in an application such that I can write an installer with no
+ external files. Creation of archives has not been attempted, although
+ parts of the framework are present.
+ .
+ Based on Unzip ioapi.c version 0.22, May 19th, 2003
+ .
+ Copyright (C) 1998-2003 Gilles Vollant
+           (C) 2003 Justin Fletcher
+ .
+ Dynamically allocated memory version. Troels K 2004
+    mem_close deletes the data: file is single-session. No filenames.
+ .
+ This file is under the same license as the Unzip tool it is distributed
+ with.
+License: zlib
+
+Files: third_party/zlib-1.2.3/contrib/minizip/crypt.h
+Copyright: 1998-2005, Gilles Vollant
+Comment: This code is a modified version of crypting code in Infozip distribution
+ .
+ The encryption/decryption parts of this source code (as opposed to the
+ non-echoing password parts) were originally written in Europe.  The
+ whole source package can be freely distributed, including from the USA.
+ (Prior to January 2000, re-export from the US was a violation of US law.)
+ .
+ This encryption code is a direct transcription of the algorithm from
+ Roger Schlafly, described by Phil Katz in the file appnote.txt.  This
+ file (appnote.txt) is distributed with the PKZIP program (even in the
+ version without encryption capabilities).
+ .
+ If you don't need crypting in your application, just define symbols
+ NOCRYPT and NOUNCRYPT.
+ .
+ This code support the "Traditional PKWARE Encryption".
+ .
+ The new AES encryption added on Zip format by Winzip (see the page
+ http://www.winzip.com/aes_info.htm ) and PKWare PKZip 5.x Strong
+ Encryption is not supported.
+License: zlib
+
+Files: third_party/zlib-1.2.3/contrib/minizip/unzip.h
+ third_party/zlib-1.2.3/contrib/minizip/zip.h
+Copyright: 1998-2005, Gilles Vollant
+License: zlib
+
+Files: third_party/zlib-1.2.3/zconf.h
+Copyright: 1995-2005, Jean-loup Gailly
+License: zlib
+
+Files: third_party/zlib-1.2.3/zlib.h
+Copyright: 1995-2005, Jean-loup Gailly and Mark Adler
+License: zlib
+
+Files: third_party/zlib-1.2.3/contrib/minizip/ioapi.c
+ third_party/zlib-1.2.3/contrib/minizip/ioapi.h
+ third_party/zlib-1.2.3/contrib/minizip/iowin32.c
+ third_party/zlib-1.2.3/contrib/minizip/iowin32.h
+ third_party/zlib-1.2.3/contrib/minizip/miniunz.c
+ third_party/zlib-1.2.3/contrib/minizip/minizip.c
+ third_party/zlib-1.2.3/contrib/minizip/zip.c
+Copyright: 1998-2005, Gilles Vollant
+License: zlib
+
+Files: debian/*
+Copyright: 2009, Francesco Paolo Lovergine <frankie@debian.org>
+License: GPL-3.0+
+
+License: BSD-3-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSL-1.0
+ Boost Software License - Version 1.0 - August 17th, 2003
+ .
+ Permission is hereby granted, free of charge, to any person or organization
+ obtaining a copy of the software and accompanying documentation covered by
+ this license (the "Software") to use, reproduce, display, distribute,
+ execute, and transmit the Software, and to prepare derivative works of the
+ Software, and to permit third-parties to whom the Software is furnished to
+ do so, all subject to the following:
+ .
+ The copyright notices in the Software and this entire statement, including
+ the above license grant, this restriction and the following disclaimer,
+ must be included in all copies of the Software, in whole or in part, and
+ all derivative works of the Software, unless such copies or derivative
+ works are solely in the form of machine-executable object code generated by
+ a source language processor.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
+
+License: GPL-2.0+ with Libtool exception
+ GNU Libtool is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ As a special exception to the GNU General Public License,
+ if you distribute this file as part of a program or library that
+ is built using GNU Libtool, you may include this file under the
+ same distribution terms that you use for the rest of that program.
+ .
+ GNU Libtool is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with GNU Libtool; see the file COPYING.  If not, a copy
+ can be downloaded from http://www.gnu.org/licenses/gpl.html,
+ or obtained by writing to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 3 can be found in the file
+ `/usr/share/common-licenses/GPL-3'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public
+ License version 2.1 can be found in the file
+ `/usr/share/common-licenses/LGPL-2.1'.
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+License: zlib
+ This software is provided 'as-is', without any express or implied
+ warranty.  In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+ 3. This notice may not be removed or altered from any source distribution.
+

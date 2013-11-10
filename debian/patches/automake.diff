@@ -1,0 +1,277 @@
+Description: Don't fail build on warnings, don't use embedded liburiparser.
+Author: Francesco Paolo Lovergine <frankie@debian.org>
+Last-Update: 2013-10-07
+--- a/examples/engine/Makefile.am
++++ b/examples/engine/Makefile.am
+@@ -2,7 +2,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 	      -I$(top_srcdir)/third_party/boost_1_34_1
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Werror -ansi -pedantic -fno-rtti
++AM_CXXFLAGS = -Wall -ansi -pedantic -fno-rtti
+ endif
+ 
+ noinst_PROGRAMS = \
+--- a/examples/gpx/Makefile.am
++++ b/examples/gpx/Makefile.am
+@@ -2,7 +2,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 	      -I$(top_srcdir)/third_party/boost_1_34_1
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Werror -ansi -pedantic -fno-rtti
++AM_CXXFLAGS = -Wall -ansi -pedantic -fno-rtti
+ endif
+ 
+ noinst_PROGRAMS = gpxtracktokml
+--- a/examples/gx/Makefile.am
++++ b/examples/gx/Makefile.am
+@@ -2,7 +2,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 	      -I$(top_srcdir)/third_party/boost_1_34_1
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Werror -ansi -pedantic -fno-rtti
++AM_CXXFLAGS = -Wall -ansi -pedantic -fno-rtti
+ endif
+ 
+ noinst_PROGRAMS = \
+--- a/examples/hellonet/Makefile.am
++++ b/examples/hellonet/Makefile.am
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 	      -I$(top_srcdir)/third_party/boost_1_34_1
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Werror -ansi -pedantic -fno-rtti
++AM_CXXFLAGS = -Wall -ansi -pedantic -fno-rtti
+ endif
+ 
+ noinst_PROGRAMS = csvurl2gmap getgmapkml getgsheetcsv getgsheetkml \
+--- a/examples/helloworld/Makefile.am
++++ b/examples/helloworld/Makefile.am
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Werror -ansi -pedantic -fno-rtti
++AM_CXXFLAGS = -Wall -ansi -pedantic -fno-rtti
+ endif
+ 
+ noinst_LTLIBRARIES = libhelloutil.la
+--- a/examples/regionator/Makefile.am
++++ b/examples/regionator/Makefile.am
+@@ -3,7 +3,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+               -I$(top_srcdir)/third_party/zlib-1.2.3/contrib
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Werror -ansi -pedantic -fno-rtti
++AM_CXXFLAGS = -Wall -ansi -pedantic -fno-rtti
+ endif
+ 
+ noinst_PROGRAMS = csvregionator kmlregionator
+--- a/examples/xsd/Makefile.am
++++ b/examples/xsd/Makefile.am
+@@ -3,7 +3,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 	      -I$(top_srcdir)/third_party/boost_1_34_1
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Werror -ansi -pedantic -fno-rtti
++AM_CXXFLAGS = -Wall -ansi -pedantic -fno-rtti
+ endif
+ 
+ noinst_PROGRAMS = xsdchildren xsdcoverage xsdelements xsdenums xsdfind xsdtypes
+--- a/src/kml/base/Makefile.am
++++ b/src/kml/base/Makefile.am
+@@ -1,15 +1,14 @@
+ AM_CPPFLAGS = -I$(top_srcdir)/src \
+               -I$(top_srcdir)/third_party/boost_1_34_1 \
+               -I$(top_srcdir)/third_party/googletest-r108/include \
+-              -I$(top_srcdir)/third_party/uriparser-0.7.5/include \
+               -I$(top_srcdir)/third_party/zlib-1.2.3/contrib
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -fno-rtti
+-AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -fno-rtti -DGTEST_HAS_RTTI=0
++AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -pedantic -fno-rtti
++AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -fno-rtti -DGTEST_HAS_RTTI=0
+ endif
+ 
+-libkmlbase_la_LDFLAGS = -lexpat
++libkmlbase_la_LDFLAGS = -lexpat -luriparser
+ 
+ lib_LTLIBRARIES = libkmlbase.la
+ libkmlbase_la_SOURCES = \
+@@ -31,8 +30,7 @@ libkmlbase_la_SOURCES = \
+ 	zip_file.cc
+ 
+ libkmlbase_la_LIBADD = \
+-	$(top_builddir)/third_party/libminizip.la \
+-	$(top_builddir)/third_party/liburiparser.la
++	$(top_builddir)/third_party/libminizip.la
+ 
+ # These header files will be installed in $(includedir)/kml/base
+ libkmlbaseincludedir = $(includedir)/kml/base
+@@ -137,8 +135,7 @@ math_util_test_LDADD = libkmlbase.la \
+ 
+ net_cache_test_SOURCES = net_cache_test.cc
+ net_cache_test_CXXFLAGS = -DDATADIR=\"$(DATA_DIR)\" $(AM_TEST_CXXFLAGS)
+-net_cache_test_LDADD = libkmlbase.la \
+-        $(top_builddir)/third_party/liburiparser.la \
++net_cache_test_LDADD = libkmlbase.la -luriparser \
+ 	$(top_builddir)/third_party/libgtest_main.la
+ 
+ referent_test_SOURCES = referent_test.cc
+@@ -163,8 +160,7 @@ time_util_test_LDADD= libkmlbase.la \
+ 
+ uri_parser_test_SOURCES = uri_parser_test.cc
+ uri_parser_test_CXXFLAGS = -DDATADIR=\"$(DATA_DIR)\" $(AM_TEST_CXXFLAGS)
+-uri_parser_test_LDADD= libkmlbase.la \
+-        $(top_builddir)/third_party/liburiparser.la \
++uri_parser_test_LDADD= libkmlbase.la -luriparser \
+ 	$(top_builddir)/third_party/libgtest_main.la
+ 
+ util_test_SOURCES = util_test.cc
+--- a/src/kml/convenience/Makefile.am
++++ b/src/kml/convenience/Makefile.am
+@@ -3,8 +3,8 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+               -I$(top_srcdir)/third_party/googletest-r108/include
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -fno-rtti
+-AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -fno-rtti -DGTEST_HAS_RTTI=0
++AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -pedantic -fno-rtti
++AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -fno-rtti -DGTEST_HAS_RTTI=0
+ endif
+ 
+ # These header files are added to the distribution such that it can be built,
+--- a/src/kml/dom/Makefile.am
++++ b/src/kml/dom/Makefile.am
+@@ -3,8 +3,8 @@ AM_CPPFLAGS= -I$(top_srcdir)/src \
+ 	     -I$(top_srcdir)/third_party/googletest-r108/include
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -fno-rtti
+-AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -fno-rtti -DGTEST_HAS_RTTI=0
++AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -pedantic -fno-rtti
++AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -fno-rtti -DGTEST_HAS_RTTI=0
+ endif
+ 
+ lib_LTLIBRARIES = libkmldom.la
+--- a/src/kml/engine/Makefile.am
++++ b/src/kml/engine/Makefile.am
+@@ -3,8 +3,8 @@ AM_CPPFLAGS= -I$(top_srcdir)/src \
+ 	     -I$(top_srcdir)/third_party/googletest-r108/include
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -fno-rtti
+-AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -fno-rtti -DGTEST_HAS_RTTI=0
++AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -pedantic -fno-rtti
++AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -fno-rtti -DGTEST_HAS_RTTI=0
+ endif
+ 
+ lib_LTLIBRARIES = libkmlengine.la
+@@ -303,8 +303,7 @@ style_inliner_test_SOURCES = style_inlin
+ style_inliner_test_CXXFLAGS = -DDATADIR=\"$(DATA_DIR)\" $(AM_TEST_CXXFLAGS)
+ style_inliner_test_LDADD= libkmlengine.la \
+ 	$(top_builddir)/src/kml/dom/libkmldom.la \
+-	$(top_builddir)/src/kml/base/libkmlbase.la \
+-	$(top_builddir)/third_party/liburiparser.la \
++	$(top_builddir)/src/kml/base/libkmlbase.la -luriparser \
+ 	$(top_builddir)/third_party/libgtest_main.la
+ 
+ style_merger_test_SOURCES = style_merger_test.cc
+--- a/src/kml/regionator/Makefile.am
++++ b/src/kml/regionator/Makefile.am
+@@ -4,8 +4,8 @@ AM_CPPFLAGS= -I$(top_srcdir)/src \
+ 
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -fno-rtti
+-AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -fno-rtti -DGTEST_HAS_RTTI=0
++AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -pedantic -fno-rtti
++AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -fno-rtti -DGTEST_HAS_RTTI=0
+ endif
+ 
+ lib_LTLIBRARIES = libkmlregionator.la
+--- a/src/kml/xsd/Makefile.am
++++ b/src/kml/xsd/Makefile.am
+@@ -3,8 +3,8 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ 	      -I$(top_srcdir)/third_party/googletest-r108/include
+ 
+ if GCC
+-AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -fno-rtti
+-AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -fno-rtti -DGTEST_HAS_RTTI=0
++AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -pedantic -fno-rtti
++AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -ansi -fno-rtti -DGTEST_HAS_RTTI=0
+ endif
+ 
+ lib_LTLIBRARIES = libkmlxsd.la
+--- a/src/swig/Makefile.am
++++ b/src/swig/Makefile.am
+@@ -1,8 +1,7 @@
+ SUBDIRS = java python
+ 
+ AM_CPPFLAGS = -I$(top_srcdir)/src \
+-	      -I$(top_srcdir)/third_party/boost_1_34_1 \
+-	      -I$(top_srcdir)/third_party/uriparser-0.7.5/include
++	      -I$(top_srcdir)/third_party/boost_1_34_1
+ 
+ COMMONLIBS = $(top_builddir)/src/kml/engine/libkmlengine.la \
+              $(top_builddir)/src/kml/dom/libkmldom.la \
+--- a/third_party/Makefile.am
++++ b/third_party/Makefile.am
+@@ -1,11 +1,8 @@
+-uriparser = uriparser-0.7.5
+-
+ AM_CPPFLAGS = -I$(top_srcdir)/third_party/zlib-1.2.3/contrib \
+-	      -I$(top_srcdir)/third_party/$(uriparser)/include \
+ 	      -I$(top_srcdir)/third_party/googletest-r108 \
+ 	      -I$(top_srcdir)/third_party/googletest-r108/include
+ 
+-lib_LTLIBRARIES = libminizip.la liburiparser.la
++lib_LTLIBRARIES = libminizip.la
+ noinst_LTLIBRARIES = libgtest.la libgtest_main.la
+ 
+ libminizip_la_SOURCES = \
+@@ -15,27 +12,6 @@ libminizip_la_SOURCES = \
+ 	zlib-1.2.3/contrib/minizip/zip.c
+ libminizip_la_LDFLAGS = -lz
+ 
+-liburiparser_la_SOURCES = \
+-	$(uriparser)/lib/UriCommon.c \
+-	$(uriparser)/lib/UriCommon.h \
+-	$(uriparser)/lib/UriCompare.c \
+-	$(uriparser)/lib/UriEscape.c \
+-	$(uriparser)/lib/UriFile.c \
+-	$(uriparser)/lib/UriIp4.c \
+-	$(uriparser)/lib/UriIp4Base.c \
+-	$(uriparser)/lib/UriIp4Base.h \
+-	$(uriparser)/lib/UriNormalize.c \
+-	$(uriparser)/lib/UriNormalizeBase.c \
+-	$(uriparser)/lib/UriNormalizeBase.h \
+-	$(uriparser)/lib/UriParse.c \
+-	$(uriparser)/lib/UriParseBase.c \
+-	$(uriparser)/lib/UriParseBase.h \
+-	$(uriparser)/lib/UriQuery.c \
+-	$(uriparser)/lib/UriRecompose.c \
+-	$(uriparser)/lib/UriResolve.c \
+-	$(uriparser)/lib/UriShorten.c
+-liburiparser_la_LDFLAGS = -version-info 1:5:0
+-
+ boost_root = boost_1_34_1
+ boost = $(boost_root)/boost
+ boostinc = $(includedir)/kml/third_party/$(boost)
+@@ -162,15 +138,6 @@ EXTRA_DIST = \
+ 	$(googletest)/include/gtest/internal/gtest-port.h \
+ 	$(googletest)/include/gtest/internal/gtest-string.h \
+ 	$(googletest)/include/gtest/internal/gtest-type-util.h \
+-	$(uriparser)/COPYING \
+-	$(uriparser).win32/debug/uriparser.lib \
+-	$(uriparser).win32/release/uriparser.lib \
+-	$(uriparser)/include/uriparser/Uri.h \
+-	$(uriparser)/include/uriparser/UriBase.h \
+-	$(uriparser)/include/uriparser/UriDefsAnsi.h \
+-	$(uriparser)/include/uriparser/UriDefsConfig.h \
+-	$(uriparser)/include/uriparser/UriDefsUnicode.h \
+-	$(uriparser)/include/uriparser/UriIp4.h \
+ 	zlib-1.2.3/zconf.h \
+ 	zlib-1.2.3/zlib.h \
+ 	zlib-1.2.3/contrib/minizip/crypt.h \

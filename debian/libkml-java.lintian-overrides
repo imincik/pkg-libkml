@@ -1,0 +1,8 @@
+# SONAMEs change together
+libkml-java: package-name-doesnt-match-sonames libkmlbase-swig-java0 libkmldom-swig-java0 libkmlengine-swig-java0
+
+# Using shlibs for C++ library
+libkml-java: no-symbols-control-file
+
+# swig only generates bindings for the default JRE
+libkml-java: incompatible-java-bytecode-format Java7 version (Class format: 51)

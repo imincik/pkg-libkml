@@ -1,0 +1,11 @@
+# SONAMEs change together
+libkml0: package-name-doesnt-match-sonames libkmlbase0 libkmlconvenience0 libkmldom0 libkmlengine0 libkmlregionator0 libkmlxsd0 libminizip0
+
+# Using shlibs for C++ library
+libkml0: no-symbols-control-file
+
+# -D_FORTIFY_SOURCE=2 is used during build, but hardening-check reports:
+# Fortify Source functions: no, only unprotected functions found!
+#  unprotected: memcpy
+#  unprotected: fread
+libkml0: hardening-no-fortify-functions usr/lib/*/libminizip.so.0.0.0

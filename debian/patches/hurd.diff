@@ -1,0 +1,28 @@
+Description: Support building on hurd-i386
+Author: Pino Toscano <pino@debian.org>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=671894
+Last-Update: 2013-10-07
+--- a/third_party/googletest-r108/src/gtest-filepath.cc
++++ b/third_party/googletest-r108/src/gtest-filepath.cc
+@@ -52,6 +52,10 @@
+ 
+ #include <gtest/internal/gtest-string.h>
+ 
++#ifndef PATH_MAX
++# define PATH_MAX 4096
++#endif
++
+ namespace testing {
+ namespace internal {
+ 
+--- a/configure.ac
++++ b/configure.ac
+@@ -27,7 +27,7 @@ dnl Which platform are we building on?
+ PLATFORM=
+ SHLIBSUFFIX=
+ case "`uname -s`" in
+-	Linux|GNU/kFreeBSD)	PLATFORM=linux
++	Linux|GNU/kFreeBSD|GNU)	PLATFORM=linux
+ 		SHLIBSUFFIX="so"
+ 	;;
+ 	Darwin)	PLATFORM=darwin

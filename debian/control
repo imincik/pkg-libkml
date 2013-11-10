@@ -1,0 +1,80 @@
+Source: libkml
+Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
+Uploaders: Francesco Paolo Lovergine <frankie@debian.org>,
+           Bas Couwenberg <sebastic@xs4all.nl>
+Section: science
+Priority: optional
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               libexpat1-dev,
+               zlib1g-dev,
+               default-jdk,
+               python-dev (>=  2.6.6-3~),
+               python-all-dev (>=  2.6.6-3~),
+               liburiparser-dev (>= 0.7.1),
+               chrpath,
+               libcurl4-gnutls-dev,
+               swig,
+               dh-autoreconf
+Standards-Version: 3.9.4
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-grass/libkml.git
+Vcs-Git: git://anonscm.debian.org/pkg-grass/libkml.git
+Homepage: http://code.google.com/p/libkml/
+X-Python-Version: 2.7
+
+Package: libkml0
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Library to manipulate KML 2.2 OGC standard files
+ This is a library for use with applications that want to parse,        
+ generate and operate on KML, a geo-data XML variant. It is an          
+ implementation of the OGC KML 2.2 standard. It is written in C++ and   
+ bindings are available via SWIG to Java and Python.                    
+ .
+ This package contains the basic shared libraries for applications 
+ that use the KML format.
+
+Package: libkml-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libkml0 (= ${binary:Version}),
+         liburiparser-dev (>= 0.7.1),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Library to manipulate KML 2.2 OGC standard files - development files
+ This is a library for use with applications that want to parse,        
+ generate and operate on KML, a geo-data XML variant. It is an          
+ implementation of the OGC KML 2.2 standard. It is written in C++ and   
+ bindings are available via SWIG to Java and Python.                    
+ .
+ This package contains files required to build C/C++ programs which use
+ the KML library.
+
+Package: libkml-java
+Architecture: any
+Section: java
+Depends: libkml0 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Library to manipulate KML 2.2 OGC standard files - Java package
+ This is a library for use with applications that want to parse,        
+ generate and operate on KML, a geo-data XML variant. It is an          
+ implementation of the OGC KML 2.2 standard. It is written in C++ and   
+ bindings are available via SWIG to Java and Python.                    
+ .
+ This package contains the required packages for Java applications.
+
+Package: python-kml
+Architecture: any
+Section: python
+Depends: libkml0 (= ${binary:Version}), ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Provides: ${python:Provides}
+Description: Library to manipulate KML 2.2 OGC standard files - Python extension
+ This is a library for use with applications that want to parse,        
+ generate and operate on KML, a geo-data XML variant. It is an          
+ implementation of the OGC KML 2.2 standard. It is written in C++ and   
+ bindings are available via SWIG to Java and Python.                    
+ .
+ This package contains required extensions for Python applications.
+

@@ -1,0 +1,33 @@
+Description: Support ia64 __clone2().
+Author: Francesco Paolo Lovergine <frankie@debian.org>
+Last-Update: 2013-10-07
+--- a/third_party/googletest-r108/src/gtest-death-test.cc
++++ b/third_party/googletest-r108/src/gtest-death-test.cc
+@@ -594,6 +594,13 @@ static bool StackGrowsDown() {
+ // A threadsafe implementation of fork(2) for threadsafe-style death tests
+ // that uses clone(2).  It dies with an error message if anything goes
+ // wrong.
++
++// ia64 has __clone2 instead of clone on Linux.
++#ifdef __ia64__
++extern "C" int  __clone2(int (*fn) (void *arg), void *child_stack_base,
++                    size_t child_stack_size, int flags, void *arg, ...);
++#endif
++
+ static pid_t ExecDeathTestFork(char* const* argv, int close_fd) {
+   static const bool stack_grows_down = StackGrowsDown();
+   const size_t stack_size = getpagesize();
+@@ -603,8 +610,13 @@ static pid_t ExecDeathTestFork(char* con
+   void* const stack_top =
+       static_cast<char*>(stack) + (stack_grows_down ? stack_size : 0);
+   ExecDeathTestArgs args = { argv, close_fd };
++#ifdef __ia64__
++  const pid_t child_pid = __clone2(&ExecDeathTestChildMain, stack_top, stack_size,
++                                SIGCHLD, &args);
++#else
+   const pid_t child_pid = clone(&ExecDeathTestChildMain, stack_top,
+                                 SIGCHLD, &args);
++#endif
+   GTEST_DEATH_TEST_CHECK_(child_pid != -1);
+   GTEST_DEATH_TEST_CHECK_(munmap(stack, stack_size) != -1);
+   return child_pid;

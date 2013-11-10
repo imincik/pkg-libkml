@@ -1,0 +1,147 @@
+libkml (1.3.0~r864-2) unstable; urgency=low
+
+  * No Multi-Arch: same for java package, jar contains SWIG generated code.
+    (closes: #728785)
+  * Change Priority to optional.
+
+ -- Bas Couwenberg <sebastic@xs4all.nl>  Sun, 10 Nov 2013 01:40:38 +0100
+
+libkml (1.3.0~r864-1) unstable; urgency=low
+
+  * Merge upstream commit r864:
+    Allow colors to have leading whitespace, with or without '#'.
+  * Add myself to Uploaders.
+  * Update swig.diff to also disable the SWIG version check in configure.ac.
+    Thanks Ilya Barygin for the patch.
+  * Update ld-as-needed.diff to fix FTBFS with --as-needed.
+    Thanks Ilya Barygin for the patch.
+    (closes: #692055)
+  * Add hurd.diff to fix FTBFS on hurd-i386.
+    Thanks Pino Toscano for the patch.
+    (closes: #671894)
+  * Refresh patches.
+  * Use canonical URLs for Vcs-* fields.
+  * Don't start short description with an article.
+  * Drop XB-Python-Version from control file.
+  * Add a watch file.
+  * Add patch to fix executable-not-elf-or-script for java run.sh example.
+  * Add lintian override for no fortify functions false positive.
+  * Drop needless dependency on default-jre for libkml-java.
+  * Move .so symlinks from java packages to libkml-dev.
+  * Update copyright file using copyright-format 1.0.
+  * Add lintian override for source-contains-prebuilt-windows-binary.
+  * Use minimal dh rules, handle Multi-Arch paths.
+  * Use dh-autoreconf for retooling.
+  * Add patch to set subdir-objects automake option for forward compatibility.
+  * Add patch to fix linking libtool libraries using a non-POSIX archiver.
+  * Add patch to not build examples, msvc and xcode subprojects.
+  * Add lintian override for incompatible-java-bytecode-format.
+  * Add patch headers for all patches.
+  * Bump Standards-Version to 3.9.4, changes: Vcs-* fields, copyright,
+    minimal dh rules.
+  * Build depend on libcurl4-gnutls-dev instead of libcurl4-openssl-dev.
+  * Also install libminizip headers.
+
+ -- Bas Couwenberg <sebastic@xs4all.nl>  Sat, 05 Oct 2013 21:15:09 +0200
+
+libkml (1.3.0~r863-4.1) unstable; urgency=low
+
+  * Non maintainer upload.
+  * Fix build failure with GCC 4.7.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 17 Apr 2012 07:59:06 +0200
+
+libkml (1.3.0~r863-4) unstable; urgency=low
+
+  * Added liburiparser-dev to libkml-dev.
+  * Moved to dh_python2 instead of python-central.
+  * Policy bumped to 3.9.3, no changes required.
+  * Debhelper level set to 9.
+  * Refreshed reautoconfiscated.diff to remove a backup file. Thanks doko.
+    (closes: #650525)
+  * The ld-as-needed case has been already managed.
+    (closes: #641681)
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Wed, 14 Mar 2012 13:29:51 +0100
+
+libkml (1.3.0~r863-3) unstable; urgency=low
+
+  * Added swig patch to remove a wrong swig version test.
+    (closes: #634528)
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Tue, 26 Jul 2011 11:07:30 +0200
+
+libkml (1.3.0~r863-2) unstable; urgency=low
+
+  * New patch geometry_test.diff to remove another failing test.
+    (closes: #626259)
+  * Policy bumped to 3.9.2, no changes needed.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Wed, 08 Jun 2011 11:19:48 +0200
+
+libkml (1.3.0~r863-1) unstable; urgency=low
+
+  * New upstream snapshot for 1.3 series, as taken from svn.
+  * Patchset updated for current release.
+  * New patch feature_view_test.diff to remove a failing test.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Tue, 29 Mar 2011 16:41:45 +0200
+
+libkml (1.2.0-2) unstable; urgency=low
+
+  * Moved to git repository and changed Vcs-* fields in debian/control.
+  * Changed to debian source 3.0.
+  * Debhelper level set to 8.
+  * Wrapped debian/changelog to 80 chars.
+  * New patch ld-as-needed.diff: it fixes FTBS when --as-needed is used at 
+    linking time.
+    (closes: #605889)
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Thu, 24 Mar 2011 21:17:35 +0100
+
+libkml (1.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated automake.diff and reautoconfiscated patches to reflect changes
+    in building scripts. Note that boost is still embedded with old 
+    version 1.34.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Fri, 25 Jun 2010 11:42:15 +0200
+
+libkml (1.1.0-1) unstable; urgency=low
+
+  * New upstream release:
+      o In-memory KMZ read support.
+      o Initial Google Maps Data API support.
+      o Various security fixes, particularly in the underlying Zip library.
+  * Patches refreshed: reautoconfiscated.diff and automake.diff.
+  * NMU ack: incorporate patch from Jakub Wilk to enable building with Python 2.6. 
+    (closes: #557288)
+  * Added original copyright from zlib to debian/copyright as originally asked
+    by ftpmasters.
+  * Added kfreebsd.diff top patch to manage GNU/kFreeBSD flavor.
+    (closes: #558208)
+  * Fixed patch ordering.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Thu, 10 Dec 2009 17:30:39 +0100
+
+libkml (1.0.1-3) unstable; urgency=high
+
+  * Added clone.diff patch to use __clone2() instead of clone() on ia64.
+    This patch solves a FTBS on ia64.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Tue, 27 Oct 2009 12:24:40 +0100
+
+libkml (1.0.1-2) unstable; urgency=low
+
+  * Added python version overriding at build/installation time.
+    (closes: #550310)
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Tue, 13 Oct 2009 14:04:45 +0200
+
+libkml (1.0.1-1) unstable; urgency=low
+
+  * Initial release.
+    (closes: #548720)
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Tue, 29 Sep 2009 11:15:17 +0200

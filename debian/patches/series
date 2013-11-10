@@ -1,0 +1,13 @@
+kfreebsd.diff
+hurd.diff
+automake.diff
+clone.diff
+ld-as-needed.diff
+feature_view_test.diff
+geometry_test.diff
+swig.diff
+fix-ftbfs-gcc4.7.diff
+java-run-sh-shebang.diff
+automake-subdir-objects.diff
+libtool-archiver.diff
+dont-build-all.diff

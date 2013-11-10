@@ -1,0 +1,4 @@
+usr/share/java
+usr/lib/*/libkmlbase_swig_java.so.*
+usr/lib/*/libkmldom_swig_java.so.*
+usr/lib/*/libkmlengine_swig_java.so.*

@@ -1,0 +1,7 @@
+usr/lib/*/libkmlbase.so.*
+usr/lib/*/libkmlconvenience.so.*
+usr/lib/*/libkmldom.so.*
+usr/lib/*/libkmlengine.so.*
+usr/lib/*/libkmlregionator.so.*
+usr/lib/*/libkmlxsd.so.*
+usr/lib/*/libminizip.so.*

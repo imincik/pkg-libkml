@@ -1,0 +1,11 @@
+Description: Add shebang to java run example to fix lintian issue.
+Author: Bas Couwenberg <sebastic@xs4al.nl>
+Last-Update: 2013-10-07
+--- a/examples/java/run.sh
++++ b/examples/java/run.sh
+@@ -1,3 +1,5 @@
++#!/bin/sh
++
+ # The relative path to the directory that holds the build shared libraries.
+ BUILT_LIB_DIR=../../build/src/swig/.libs
+ echo "=== setting shared library path to built libraries dir: $BUILT_LIB_DIR"

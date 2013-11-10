@@ -1,0 +1,5 @@
+# Upstream provides no tarballs without windows DLLs
+libkml source: source-contains-prebuilt-windows-binary third_party/expat.win32/libexpat.dll
+libkml source: source-contains-prebuilt-windows-binary third_party/expat.win32/libexpatw.dll
+libkml source: source-contains-prebuilt-windows-binary third_party/zlib-1.2.3.win32/bin/minizip.dll
+libkml source: source-contains-prebuilt-windows-binary third_party/zlib-1.2.3.win32/bin/zlib1.dll

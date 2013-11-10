@@ -1,0 +1,64 @@
+Description: Fix build with --as-needed.
+Author: Matthias Klose <doko@ubuntu.com>, Ilya Barygin <randomaction@ubuntu.com>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=605889
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641681
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=650525
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=692055
+Last-Update: 2013-10-07
+--- a/examples/helloworld/Makefile.am
++++ b/examples/helloworld/Makefile.am
+@@ -26,8 +26,8 @@ circlegen_SOURCES = circlegen.cc
+ circlegen_LDADD = \
+ 	$(top_builddir)/src/kml/base/libkmlbase.la \
+ 	$(top_builddir)/src/kml/dom/libkmldom.la \
+-	$(top_builddir)/src/kml/engine/libkmlengine.la \
+-	$(top_builddir)/src/kml/convenience/libkmlconvenience.la
++	$(top_builddir)/src/kml/convenience/libkmlconvenience.la \
++	$(top_builddir)/src/kml/engine/libkmlengine.la
+ 
+ checklinks_SOURCES = checklinks.cc
+ checklinks_LDADD = \
+@@ -75,8 +75,8 @@ hellohref_LDADD = \
+ 
+ hellokmz_SOURCES = hellokmz.cc
+ hellokmz_LDADD = \
+-	$(top_builddir)/src/kml/dom/libkmldom.la \
+ 	$(top_builddir)/src/kml/engine/libkmlengine.la \
++	$(top_builddir)/src/kml/dom/libkmldom.la \
+ 	$(top_builddir)/src/kml/base/libkmlbase.la
+ 
+ helloregion_SOURCES = helloregion.cc
+@@ -102,8 +102,8 @@ parsens_LDADD = \
+ 
+ prettykml_SOURCES = prettykml.cc
+ prettykml_LDADD = \
+-	$(top_builddir)/src/kml/dom/libkmldom.la \
+ 	$(top_builddir)/src/kml/engine/libkmlengine.la \
++	$(top_builddir)/src/kml/dom/libkmldom.la \
+ 	$(top_builddir)/src/kml/base/libkmlbase.la
+ 
+ printgeometry_SOURCES = printgeometry.cc
+--- a/examples/regionator/Makefile.am
++++ b/examples/regionator/Makefile.am
+@@ -10,17 +10,17 @@ noinst_PROGRAMS = csvregionator kmlregio
+ 
+ csvregionator_SOURCES = csvregionator.cc
+ csvregionator_LDADD = \
++	$(top_builddir)/src/kml/convenience/libkmlconvenience.la \
+ 	$(top_builddir)/src/kml/base/libkmlbase.la \
+ 	$(top_builddir)/src/kml/dom/libkmldom.la \
+ 	$(top_builddir)/src/kml/engine/libkmlengine.la \
+-	$(top_builddir)/src/kml/regionator/libkmlregionator.la \
+-	$(top_builddir)/src/kml/convenience/libkmlconvenience.la
++	$(top_builddir)/src/kml/regionator/libkmlregionator.la
+ 
+ kmlregionator_SOURCES = kmlregionator.cc
+ kmlregionator_LDADD = \
+ 	$(top_builddir)/src/kml/base/libkmlbase.la \
+ 	$(top_builddir)/src/kml/dom/libkmldom.la \
+-	$(top_builddir)/src/kml/engine/libkmlengine.la \
+ 	$(top_builddir)/src/kml/regionator/libkmlregionator.la \
+-	$(top_builddir)/src/kml/convenience/libkmlconvenience.la
++	$(top_builddir)/src/kml/convenience/libkmlconvenience.la \
++	$(top_builddir)/src/kml/engine/libkmlengine.la
+ 

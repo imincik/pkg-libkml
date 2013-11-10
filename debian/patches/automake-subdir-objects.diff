@@ -1,0 +1,11 @@
+Description: Remain forward compatible with automake using subdir-objects.
+Author: Bas Couwenberg <sebastic@xs4all.nl>
+Last-Update: 2013-10-07
+--- a/third_party/Makefile.am
++++ b/third_party/Makefile.am
+@@ -1,3 +1,5 @@
++AUTOMAKE_OPTIONS = subdir-objects
++
+ AM_CPPFLAGS = -I$(top_srcdir)/third_party/zlib-1.2.3/contrib \
+ 	      -I$(top_srcdir)/third_party/googletest-r108 \
+ 	      -I$(top_srcdir)/third_party/googletest-r108/include

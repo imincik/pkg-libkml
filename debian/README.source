@@ -1,0 +1,22 @@
+libkml for Debian
+-----------------
+
+This package uses quilt to manage all modifications to the upstream
+source.  Changes are stored in the source package as diffs in
+debian/patches and applied during the build.  Please see:
+
+    /usr/share/doc/quilt/README.source
+
+for more information on how to apply the patches, modify patches, or
+remove a patch.
+
+The main difference among Google's tarball and Debian one is the
+use of system libraries instead of the inner ones whenever possible. 
+Specifically the embedded uriparser is skipped and changed with
+the system provided. The Boost library is currently so oldi (and weak) 
+that it is better using the internal one (which is not exposed).
+
+This is done by changing the Makefile.am automake set of scripts
+and autoreconfiguring. Quilt is used to patch the build system and
+dh-autoreconf to reconfigure it.
+
